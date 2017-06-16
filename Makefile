@@ -19,7 +19,7 @@ jobs-submit:
 
 container:
 	rm -f singularity/$(APP).img
-	sudo singularity create --size 512 singularity/$(APP).img
+	sudo singularity create --size 1024 singularity/$(APP).img
 	sudo singularity bootstrap singularity/$(APP).img singularity/$(APP).def
 
 iput-container:
