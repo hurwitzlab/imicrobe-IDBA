@@ -4,6 +4,9 @@ From: ubuntu:latest
 %runscript
     echo "Hello!"
 
+%environment
+    PATH=$PATH:/idba-1.1.3/bin
+
 %post
     apt update
     apt install -y wget build-essential autoconf
@@ -14,9 +17,6 @@ From: ubuntu:latest
     tar -xf 1.1.3.tar.gz
     cd idba-1.1.3
     ./build.sh
-
-    # Add environment variables to /environment file
-    echo "\nexport PATH=/idba-1.1.3/bin:\$PATH" >> /environment
 
     # Create mount points for TACC directories
     mkdir /home1

@@ -1,0 +1,9 @@
+{
+  "name": "imicrobe-IDBA-UD-test",
+  "appId": "imicrobe-IDBA-UD-0.0.1",
+  "archive": true,
+  "inputs": {
+    "INPUT_FILE": "/iplant/home/mbomhoff/data/imicrobe/IDBA-UD/test.fa",
+    "OUTPUT_DIR": "/iplant/home/mbomhoff/data/imicrobe/IDBA-UD/output/"
+  }
+}
