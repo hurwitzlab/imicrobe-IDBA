@@ -6,7 +6,7 @@ From: ubuntu:latest
 
 %post
     apt update
-    apt install -y wget build-essential
+    apt install -y wget build-essential autoconf
 
     # Install ABySS from source
     cd /
@@ -24,4 +24,4 @@ From: ubuntu:latest
     mkdir /work
 
 %test
-    idba 
+    /idba-1.1.3/bin/idba 
