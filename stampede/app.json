@@ -5,7 +5,7 @@
     "defaultNodeCount": 1,
     "defaultProcessorsPerNode": 16,
     "defaultQueue": "serial",
-    "deploymentPath": "mbomhoff/applications/imicrobe-IDBA-UD-0.0.1/stampede",
+    "deploymentPath": "mbomhoff/applications/imicrobe-IDBA-0.0.1/stampede",
     "deploymentSystem": "data.iplantcollaborative.org",
     "executionSystem": "tacc-stampede-mbomhoff",
     "executionType": "HPC",
@@ -13,7 +13,7 @@
     "inputs": [
         {
             "details": {
-                "argument": "-r",
+                "argument": "",
                 "description": "FASTA file of forward and reverse reads",
                 "label": "Input file (FASTA file of forward AND reverse reads)",
                 "showArgument": true
@@ -29,31 +29,12 @@
                 "required": true,
                 "visible": true
             }
-        },
-        {
-            "details": {
-                "argument": "-o",
-                "description": "Output directory",
-                "label": "Output directory",
-                "showArgument": true
-            },
-            "id": "OUTPUT_DIR",
-            "semantics": {
-                "fileTypes": [
-                    "raw-0"
-                ]
-            },
-            "value": {
-                "default": "this is needed",
-                "required": true,
-                "visible": true
-            }
         }
     ],
-    "label": "iMicrobe IDBA-UD",
-    "longDescription": "iMicrobe IDBA-UD",
+    "label": "iMicrobe IDBA",
+    "longDescription": "iMicrobe IDBA",
     "modules": [],
-    "name": "imicrobe-IDBA-UD",
+    "name": "imicrobe-IDBA",
     "ontology": [
         "http://sswapmeet.sswap.info/agave/apps/Application"
     ],
@@ -61,12 +42,13 @@
     "parallelism": "SERIAL",
     "parameters": [
     ],
-    "shortDescription": "iMicrobe IDBA-UD",
+    "shortDescription": "iMicrobe IDBA",
     "tags": [
         "imicrobe",
         "IDBA",
         "IDBA-UD",
-        "assembly"
+        "assembly",
+        "assembler"
     ],
     "templatePath": "template.sh",
     "testPath": "test.sh",

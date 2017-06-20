@@ -17,7 +17,7 @@ export LAUNCHER_RMI=SLURM
 
 export LAUNCHER_JOB_FILE=`pwd`/launcher_jobfile_${SLURM_JOB_ID}
 echo ${LAUNCHER_JOB_FILE}
-singularity exec imicrobe-IDBA.img idba-ud \
+singularity exec singularity/imicrobe-IDBA.img /idba-1.1.3/bin/idba_ud \
    -r ${INPUT_FILE} \
    -o ${OUTPUT_DIR}
 
