@@ -23,8 +23,7 @@ container:
 	sudo singularity bootstrap singularity/$(APP).img singularity/$(APP).def
 
 iput-container:
-	irm $(APP).img
-	iput -K singularity/$(APP).img
+	iput -Kf singularity/$(APP).img
 
 iget-container:
 	iget -K $(APP).img
