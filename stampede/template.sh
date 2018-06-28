@@ -1,8 +1,11 @@
 #!/bin/bash
 
-echo "Started $(date)"
+echo "Started imicrobe-idba $(date)"
 
-sh run.sh ${INPUT_FILE} `pwd`
+echo "FASTQ_1: \"${FASTQ_1}\""
+echo "FASTQ_2: \"${FASTQ_2}\""
 
-echo "Ended $(date)"
+sh run.sh ${FASTQ_1} ${FASTQ_2}
+
+echo "Ended imicrobe-idba $(date)"
 exit 0

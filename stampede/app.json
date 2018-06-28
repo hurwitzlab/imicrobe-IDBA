@@ -5,27 +5,46 @@
     "defaultNodeCount": 1,
     "defaultProcessorsPerNode": 16,
     "defaultQueue": "serial",
-    "deploymentPath": "mbomhoff/applications/imicrobe-IDBA-0.0.1/stampede",
+    "deploymentPath": "jklynch/applications/imicrobe-idba-0.0.2/stampede",
     "deploymentSystem": "data.iplantcollaborative.org",
-    "executionSystem": "tacc-stampede-mbomhoff",
+    "executionSystem": "tacc-stampede-jklynch",
     "executionType": "HPC",
     "helpURI": "http://i.cs.hku.hk/~alse/hkubrg/projects/idba_ud/index.html",
     "inputs": [
         {
             "details": {
                 "argument": "",
-                "description": "FASTA file of forward and reverse reads",
-                "label": "Input file (FASTA file of forward AND reverse reads)",
+                "description": "forward reads FASTQ file",
+                "label": "forward reads FASTQ file",
                 "showArgument": true
             },
-            "id": "INPUT_FILE",
+            "id": "FASTQ_1",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
                 ]
             },
             "value": {
-                "default": "this is needed",
+                "default": "",
+                "required": true,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": "",
+                "description": "reverse reads FASTQ file",
+                "label": "reverse reads FASTQ file",
+                "showArgument": true
+            },
+            "id": "FASTQ_2",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "",
                 "required": true,
                 "visible": true
             }
@@ -34,7 +53,7 @@
     "label": "iMicrobe IDBA",
     "longDescription": "iMicrobe IDBA",
     "modules": [],
-    "name": "imicrobe-IDBA",
+    "name": "imicrobe-idba",
     "ontology": [
         "http://sswapmeet.sswap.info/agave/apps/Application"
     ],
@@ -52,5 +71,5 @@
     ],
     "templatePath": "template.sh",
     "testPath": "test.sh",
-    "version": "0.0.1"
+    "version": "0.0.2"
 }

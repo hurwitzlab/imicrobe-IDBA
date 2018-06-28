@@ -2,27 +2,17 @@
 
 module load singularity
 
-INPUT_FILE=$1
-OUTPUT_DIR=$2
+echo "iMicrobe IDBA-UA begin"
+echo "run.sh arguments:"
+echo "$@"
 
-echo "starting directory : `pwd`"
-echo "`ls -l`"
-echo "input file       : ${INPUT_FILE}"
-echo "output directory : ${OUTPUT_DIR}"
+mkdir -p idba-ud-output
 
-export LAUNCHER_DIR="$HOME/src/launcher"
-export LAUNCHER_PLUGIN_DIR=$LAUNCHER_DIR/plugins
-export LAUNCHER_WORKDIR=${OUTPUT_DIR}
-export LAUNCHER_RMI=SLURM
+# must handle 3 cases:
+#   single FASTA file
+#   single FASTQ file
+#   paired FASTQ files
+singularity exec imicrobe-idba.img fq2fa --merge --filter $1 $2 idba-ud-output/reads.fa
+singularity exec imicrobe-idba.img idba_ud -r idba-ud-output/reads.fa -o idba-ud-output/
 
-export LAUNCHER_JOB_FILE=`pwd`/launcher_jobfile_${SLURM_JOB_ID}
-echo ${LAUNCHER_JOB_FILE}
-singularity exec singularity/imicrobe-IDBA.img /idba-1.1.3/bin/idba_ud \
-   -r ${INPUT_FILE} \
-   -o ${OUTPUT_DIR}
-
-sleep 10
-export LAUNCHER_PPN=2
-
-$LAUNCHER_DIR/paramrun
-echo "Ended launcher"
+echo "iMicrobe IDBA-UA completed"

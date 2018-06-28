@@ -1,0 +1,12 @@
+idba-ud-output/
+
+.cache
+.DS_Store
+.idea
+.git
+.gitignore
+*.img*
+*.pyc
+__pycache__
+
+.ipynb_checkpoints/

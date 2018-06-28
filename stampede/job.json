@@ -1,8 +1,9 @@
 {
-  "name": "imicrobe-IDBA-test",
-  "appId": "imicrobe-IDBA-0.0.1",
+  "name": "imicrobe-idba-test",
+  "appId": "imicrobe-idba-0.0.2",
   "archive": true,
   "inputs": {
-    "INPUT_FILE": "agave://data.iplantcollaborative.org/mbomhoff/data/imicrobe/IDBA/test-data/test.fasta"
+    "FASTQ_1": "test/imicrobe-idba/fragScSi_1.fq",
+    "FASTQ_2": "test/imicrobe-idba/fragScSi_2.fq"
   }
 }
